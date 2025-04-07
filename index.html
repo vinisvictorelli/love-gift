@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelopes de Amor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>Para a coisinha mais linda da minha vida</h1>
+        <p>Clique em cada envelope para descobrir uma mensagem especial</p>
+        <div class="counter">
+            <span id="opened-count">0</span> / <span id="total-count">7</span> envelopes abertos
+        </div>
+        <div id="welcome-popup" class="popup-hidden" aria-hidden="true">
+            <div class="popup-overlay"></div>
+            <div class="popup-container">
+                <div class="popup-content">
+                    <button class="close-popup" id="close-welcome-popup" aria-label="Fechar mensagem">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="popup-message-content">
+                        <h2 class="message-title">Feliz Aniversário, Amor da minha vida</h2>
+                        <p class="message-text">
+                            Minha vida,
+
+                            Hoje é o dia em que o mundo celebra o nascimento da pessoa mais incrível que eu já conheci. Mas para mim, cada dia ao seu lado é motivo de celebração, porque ter você na minha vida é o presente mais incrível que eu já ganhei.
+
+                            É difícil colocar em palavras tudo o que eu sinto por você, porque o que eu tenho dentro de mim vai além de palavras bonitas. É a paz no peito quando ouço sua voz, o brilho nos olhos quando vejo o seu sorriso, o conforto do seu abraço que sempre me traz de volta para paz, não importa o quão caótico o mundo lá fora possa estar.
+
+                            Desde que você entrou na minha vida, tudo parece ter ganhado mais cor, mais sentido. Você me inspira a ser melhor, a acreditar mais em mim mesmo, a cuidar não só de você, mas de tudo o que é importante para nós. Seu jeito único de ver o mundo, sua sensibilidade, sua força e sua bondade. Tudo em você me encanta e me transforma.
+
+                            Hoje, no seu aniversário, eu quero te lembrar do quanto você é amada e por isso te fiz esse presente. Quero te lembrar que você não é amada apenas por mim, mas por todos que têm o privilégio de conviver com você. Você ilumina os lugares por onde passa, e quem tem a sorte de te ter por perto sabe o quanto você é especial. Mas entre todas as pessoas que te admiram, eu sou, sem dúvida, o mais apaixonado, mais grato e o mais encantado pela beleza do seu ser. 
+
+                            Claro que não to falando apenas desse seu rostinho mais lindo que sinceramente me faz perder até o foco de tão belo… mas continuando
+
+                            Meu amor, meu desejo para você hoje é simples: que a vida continue te sorrindo do jeito que você sorri para ela. Que você realize seus sonhos, um a um, e que eu possa estar ao seu lado, vibrando por cada conquista, te apoiando em cada desafio e te abraçando em todos os momentos sendo eles bons ou ruins.
+
+                            Feliz aniversário, meu amor. Que esse e todos os seus anos na terra sejam repletos de amor, saúde, alegria e paz (esse último não desejo tanto assim porque se não eu vou sumir da sua vida kkkkk). E que, acima de tudo, a gente continue construindo nossa história juntos, com leveza, com carinho e com esse amor que é só nosso.
+
+                            Com todo o meu coração, Do seu Bocó
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <!-- Substitua o botão do tema existente por: -->
+            <button id="reopen-welcome-popup" aria-label="Reexibir mensagem" title="Reexibir mensagem especial">
+                <i class="fas fa-envelope"></i>
+            </button>
+            <button id="theme-toggle" aria-label="Alternar tema" title="Alternar modo anjo/demônio">
+                <span class="theme-icon">😇</span>
+            </button>
+            <button id="audio-toggle" aria-label="Alternar áudio" class="disabled" title="Ligar/desligar música">
+                <i class="fas fa-music"></i>
+            </button>
+            
+        </div>
+    </header>
+
+    <main>
+        <div class="envelopes-grid">
+            <!-- Envelopes serão gerados via JavaScript -->
+        </div>
+    </main>
+
+    <audio id="background-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Popup para exibir mensagens ampliadas -->
+    <div id="message-popup" class="popup-hidden" aria-hidden="true">
+        <div class="popup-overlay"></div>
+        <div class="popup-container">
+            <div class="popup-content">
+                <button class="close-popup" aria-label="Fechar mensagem">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="popup-message-content">
+                    <div class="message-icon"></div>
+                    <h2 class="message-title"></h2>
+                    <p class="message-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
