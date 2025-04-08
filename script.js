@@ -1,9 +1,4 @@
-// Variáveis globais
-let lastOpenedEnvelope = null;
-const messagePopup = document.getElementById('message-popup');
-const popupContent = document.querySelector('.popup-message-content');
-const closePopup = document.querySelector('.close-popup');
-const headerTitle = document.querySelector('header h1');
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mensagens para os envelopes
@@ -105,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ]
     };
-
+    
     const envelopesGrid = document.querySelector('.envelopes-grid');
     const openedCountElement = document.getElementById('opened-count');
     const totalCountElement = document.getElementById('total-count');
@@ -169,6 +164,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Função para mostrar o popup
+    function showPopup(index, mode) {
+        const message = messages[mode][index];
+        console.log(message.icon)
+        // Limpar o conteúdo existente
+        popupContent.innerHTML = `
+            <div class="message-icon">
+                <i class="fas ${message.icon}" style="color: ${message.color}"></i>
+            </div>
+            <h2 class="message-title">${message.title}</h2>
+            <p class="message-text">${message.message}</p>
+        `;
+        
+        messagePopup.classList.add('popup-visible');
+        document.body.style.overflow = 'hidden';
+    }
     // Função para adicionar listeners aos envelopes
     function addEnvelopeListeners(envelope, index, mode) {
         envelope.addEventListener('click', function(e) {
@@ -203,17 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Função para mostrar o popup
-    function showPopup(index, mode) {
-        const message = messages[mode][index];
-        popupContent.innerHTML = `
-            <i class="fas ${message.icon}"></i>
-            <div class="envelope-title">${message.title}</div>
-            <div class="envelope-message">${message.message}</div>
-        `;
-        messagePopup.classList.add('popup-visible');
-        document.body.style.overflow = 'hidden';
-    }
+    
 
     // Fechar popup
     function closeMessagePopup() {
@@ -235,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Toggle do tema anjo/demônio
+    /*/ Toggle do tema anjo/demônio
     themeToggle.addEventListener('click', function() {
         currentMode = currentMode === 'angel' ? 'demon' : 'angel';
         document.body.classList.toggle('demon-mode');
@@ -251,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         renderEnvelopes(currentMode);
     });
+    */
 
     // Toggle do áudio
     audioToggle.addEventListener('click', function() {

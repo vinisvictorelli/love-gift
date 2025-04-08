@@ -252,15 +252,18 @@ main {
     padding: 1rem;
     opacity: 0;
     transform: scale(0.8);
-    transition: all 0.5s ease 0.3s;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Garantir transição */
     width: 100%;
     z-index: 1;
     color: var(--text-color);
+    display: none; /* Ocultar inicialmente */
 }
 
 .envelope.open .envelope-content {
     opacity: 1;
     transform: scale(1);
+    display: block; /* Exibir ao abrir */
+    visibility: visible; /* Garantir visibilidade */
 }
 
 .envelope:hover .envelope-front {
@@ -336,14 +339,20 @@ main {
 }
 
 .popup-message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
     text-align: center;
-    padding: 1rem;
+    color: wheathite;
 }
 
 .message-icon {
-    font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
+}
+
+.message-icon i {
+    font-size: 3rem;
 }
 
 .message-title {
@@ -359,6 +368,8 @@ main {
     line-height: 1.6;
     white-space: pre-line;
     color: var(--text-color);
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .heart {
@@ -420,13 +431,6 @@ main {
         padding: 1.5rem;
     }
     
-    .message-title {
-        font-size: 1.8rem;
-    }
-    
-    .message-text {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 480px) {
